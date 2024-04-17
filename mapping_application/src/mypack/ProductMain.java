@@ -1,0 +1,34 @@
+package mypack;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class ProductMain {
+
+	public static void main(String[] args) {
+		Configuration c=new Configuration();
+		c.configure("hibernate.cfg.xml");
+		SessionFactory sf=c.buildSessionFactory();
+		Session s=sf.openSession();
+		Transaction t=s.beginTransaction();
+			
+		
+		Product p=new Product();
+		p.setPcode(102);
+		p.setPname("Pencil");
+		p.setPrate(20.0f);
+		
+		s.persist(p);			//save an object
+		t.commit();
+		s.close();
+		System.out.println("Done..");
+		
+		
+	
+	}
+
+}

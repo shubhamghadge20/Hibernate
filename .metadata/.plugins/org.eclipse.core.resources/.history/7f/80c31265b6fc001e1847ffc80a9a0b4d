@@ -1,0 +1,10 @@
+package mypack;
+
+public class ProductMain {
+
+public static void main (String[] args) {
+	
+	Configuration c=new Configuration();
+	c.configure("hibernate.cfg.xml");
+  }
+}
