@@ -1,0 +1,17 @@
+<hibernate-mapping>
+<class name="mypack.Employee" table="emp" discriminator-value="cemp">
+<id name="eid">
+<generator class="increment"/>
+</id>
+<discriminator column="type1" type="string"/>
+<property name="ename"/>
+<subclass name="mypack.Regular_Emp" discriminator-value="regemp">
+<property name="salary"/>
+<property name="bonus"/>
+</subclass>
+<subclass name="mypack.Contract_Emp" discriminator-value="contemp">
+<property name="contract_duration"/>
+<property name="pay_per_hour"/>
+</subclass>
+</class>
+</hibernate-mapping>
