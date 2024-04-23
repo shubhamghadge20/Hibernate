@@ -18,6 +18,8 @@ public class Contract_Emp extends Employee {
 	public void setContract_duration(int contract_duration) {
 		this.contract_duration = contract_duration;
 	}
+
+
 	
 
 }
