@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+<class name="mypack.Emp" table="empdata">
+<id name="eid" type="int">
+<column name="emp_id"></column>
+<generator class="assigned" />
+</id>
+
+<property name="ename"/>
+
+<list name="projects" table="emp_projdata" fetch="select" cascade="all">
+<key column="emp_id"></key>
+<index column="type"></index>
+<many-to-many class="mypack.Project" column="proj_id"></many-to-many>
+</list>
+</class>
+</hibernate-mapping>
