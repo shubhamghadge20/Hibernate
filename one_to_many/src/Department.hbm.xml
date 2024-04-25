@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+<class name="mypack.Employee" table="myemp1">
+<id name="id">
+<generator class="increment"></generator>
+</id>
+
+<property name="name"></property>
+<property name="salary"></property>
+</class>
+
+<class name="mypack.Department" table="mydept1">
+<id name="id">
+<generator class="increment"></generator>
+</id>
+<property name="dname"></property>
+<list name="emp" cascade="all">
+<key column="did"></key>
+<index column="type1"></index>
+<one-to-many class="mypack.Employee"></one-to-many>
+</list>
+
+</class>
+</hibernate-mapping>
